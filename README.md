@@ -108,7 +108,7 @@ echo "source /opt/ros/noetic/setup.bash" >> ~/.bashrc
 rosversion -d
 ```
 
- ## Now we can start using ROS noetic.
+ ## Now you can start using ROS noetic.
 
  # ROS-foxy-installtion
 
@@ -199,6 +199,6 @@ ros2 run demo_nodes_py listener
 
 •	You should see the talker saying that it's publishing messages and the listener saying it heard those messages. This verifies both the C++ and Python APIs are working properly.
 
- ## Now we can start using ROS foxy.
+ ## Now you can start using ROS foxy.
 
 
