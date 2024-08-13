@@ -108,4 +108,97 @@ echo "source /opt/ros/noetic/setup.bash" >> ~/.bashrc
 rosversion -d
 ```
 
- Now we can start using ROS noetic.
+ ## Now we can start using ROS noetic.
+
+ # ROS-foxy-installtion
+
+ To install ROS2 foxy, follow these steps:
+ 
+## 1.	Set Locale:
+•	Ensure your system has a locale that supports UTF-8.
+•	If you're in a minimal environment, use the following commands:
+
+```
+locale # check for UTF-8
+sudo apt update && sudo apt install locales
+sudo locale-gen en_US.UTF-8
+sudo update-locale LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
+locale # verify settings
+```
+
+## 2.	Setup Sources:
+•	Enable the Ubuntu Universe repository:
+
+```
+sudo apt install software-properties-common
+sudo add-apt-repository universe
+```
+
+•	Add the ROS 2 GPG key:
+
+```
+sudo apt update && sudo apt install curl
+curl -sSL https://raw.githubusercontent.com/ros/rosdistro/master/ros.key -o /usr/share/keyrings/ros-archive-keyring.gpg
+```
+
+•	Add the ROS 2 repository to your sources list:
+
+```
+echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/ros-archive-keyring.gpg] http://packages.ros.org/ros2/ubuntu $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/ros2.list
+```
+
+## 3.	Install ROS 2 packages:
+•	Update your apt repository caches:
+
+```
+sudo apt update
+```
+
+•	Upgrade your system to the latest version:
+
+```
+sudo apt upgrade
+```
+
+•	Install ROS 2 foxy desktop packages:
+
+```
+sudo apt install ros-foxy-desktop python3-argcomplete
+```
+
+## 4.	Environment Setup:
+•	Source the setup script to set up your environment:
+
+```
+source /opt/ros/foxy/setup.bash
+```
+
+## 5.	Try some examples:
+•	If you installed ros-foxy-desktop, you can try the following examples:
+### •	C++ talker:
+•	Open a terminal and source the setup file:
+
+```
+source /opt/ros/foxy/setup.bash
+```
+
+•	Run the talker node:
+
+```
+ros2 run demo_nodes_cpp talker
+```
+
+### •	Python listener:
+•	Open another terminal, source the setup file, and run the listener node:
+
+```
+source /opt/ros/foxy/setup.bash
+ros2 run demo_nodes_py listener
+```
+
+•	You should see the talker saying that it's publishing messages and the listener saying it heard those messages. This verifies both the C++ and Python APIs are working properly.
+
+ ## Now we can start using ROS foxy.
+
+
