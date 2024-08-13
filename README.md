@@ -1,7 +1,7 @@
 # ROS-noetic-installtion
 
 
-To install ROS noetic successfully on the virtual machine, we have to follow these steps:
+To install ROS noetic successfully on the virtual machine, you have to follow these steps:
 
 
 ## 1.	Download VirtualBox:
